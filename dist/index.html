@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>NBA</title>
+</head>
+<body>
+
+    <div class="nav-wrapper">
+        <div class="left-side">
+            <div class="nav-link-wrapper">
+                <img class='nbaImg' onerror="standby(this)" src="https://www.essentiallysports.com/wp-content/uploads/NBA_Logoman_2017-horizontal.jpg">
+            </div>
+            <div class="nav-link-wrapper">
+                <div class='games'>games</div>
+            </div>
+            <div class="nav-link-wrapper">
+                <div class='schedule'>Schedule</div>
+            </div>
+            <div class="nav-link-wrapper">
+                <div class='news'>news</div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="brand">
+                NBA TV
+            </div>
+            <div class="brand">
+                store
+            </div>
+        </div>
+    </div>
+
+    <div class='nba'>
+        <input type="text" id="nbaTeam" placeholder="NBA team">
+        <button id='btn' onclick=getTeamPlayers()>GET ROSTER</button>
+        <button class='btn' onclick=dreamTeamPlayers()>DREAM TEAM</button>
+    </div>    
+
+    <div class = 'results'></div>
+
+    <div class="popup" id="popup-1">
+        <div class="content">
+            <div class="modal-header">
+                <div class="title"></div>
+                <div data-close-button class="close-button" onclick="togglePopup()">&times;</div>
+            </div>  
+          <div class='playerSt'></div>
+        </div>
+    </div>
+
+
+    <script id="store-template" type="text/x-handlebars-template">
+        {{#each data}}
+            <div class='player'>
+                <div class='playerName'>{{firstName}} {{lastName}}</div>
+                <img onerror="standby(this)" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" class='playerImg'>
+                <div class='jersey'>{{jersey}}</div>
+                <div class='pos'>{{pos}}</div>
+            </div>    
+        {{/each}}
+    </script>
+
+
+    <script id="store-template-dreamTeam" type="text/x-handlebars-template">
+        {{#each data}}
+            <div class='player'>
+                <div data-close-button class="delete-player">&times;</div>
+                <div class='playerName'>{{firstName}} {{lastName}}</div>
+                <img onerror="standby(this)" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" class='playerImg'>
+                <div class='jersey'>{{jersey}}</div>
+                <div class='pos'>{{pos}}</div>
+            </div>    
+        {{/each}}
+    </script>
+
+    <script id="store-template-playerStats" type="text/x-handlebars-template">
+        {{#each data}}
+            <div class='playerStats'>
+                <div class='team_acronym'>team acronym: {{team_acronym}}</div>
+                <div class='team_name'>team name: {{team_name}}</div>
+                <div class='games_played'>games played: {{games_played}}</div>
+                <div class='minutes_per_game'>minutes per game: {{minutes_per_game}}</div>
+                <div class='field_goals_attempted_per_game'>field goals attempted per game: {{field_goals_attempted_per_game}}</div>
+                <div class='field_goals_made_per_game'>field goals made per game: {{field_goals_made_per_game}}</div>
+                <div class='field_goal_percentage'>field goal percentage: {{field_goal_percentage}}</div>
+                <div class='free_throw_percentage'>free throw percentage: {{free_throw_percentage}}</div>
+                <div class='three_point_attempted_per_game'>three point attempted per game: {{three_point_attempted_per_game}}</div>
+                <div class='three_point_made_per_game'>three point made per game: {{three_point_made_per_game}}</div>
+                <div class='three_point_percentage'>three point percentage: {{three_point_percentage}}</div>
+                <div class='points_per_game'> points per game: {{points_per_game}}</div>
+                <div class='offensive_rebounds_per_game'> offensive rebounds per game: {{offensive_rebounds_per_game}}</div>
+                <div class='defensive_rebounds_per_game'>defensive rebounds per game: {{defensive_rebounds_per_game}}</div>
+                <div class='rebounds_per_game'> rebounds per game: {{rebounds_per_game}}</div>
+                <div class='assists_per_game'> assists per game: {{assists_per_game}}</div>
+                <div class='steals_per_game:'> steals per game: {{steals_per_game}}</div>
+                <div class='blocks_per_game:'> blocks per game: {{blocks_per_game}}</div>
+                <div class='turnovers_per_game:'> turnovers per game: {{turnovers_per_game}}</div>
+                <div class='player_efficiency_rating::'> player efficiency rating: {{player_efficiency_rating}}</div>
+            </div>    
+        {{/each}}
+    </script>
+            
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>

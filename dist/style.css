@@ -1,0 +1,257 @@
+body {
+    font-family: "Lato", sans-serif;
+    margin: 10px;
+    background-color: gainsboro;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    background-color: rgb(13, 13, 53);
+    color: wheat;
+}
+.right-side{
+    display: flex;
+}
+
+.left-side {
+    display: flex;
+}
+
+.nav-wrapper > .right-side > div {
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid white;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+
+}
+
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid white
+}
+
+.nav-link-wrapper a:hover {
+    color: wheat
+}
+
+
+
+
+.results{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
+
+}
+
+
+.player{
+    box-shadow: 1px 1px 3px;
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 1fr;
+ 
+}
+
+.playerName {
+    font-size: 20px;
+    font-weight: bold;
+    color: palevioletred;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+}
+
+
+.jersey{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.pos{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+    color: red;
+
+}
+
+.playerImg {
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    cursor: pointer;
+
+    
+}
+
+.nbaImg{
+    max-width: 150px;
+    position: relative;
+    bottom: 30px;
+    right: 30px;
+
+  
+}
+
+
+.games{
+    cursor: pointer;
+
+}
+
+.news{
+    cursor: pointer;
+}
+
+.schedule{
+    cursor: pointer;
+    
+}
+.brand{
+    cursor: pointer;
+    
+}
+
+
+#nbaTeam{
+    font-size:1.3em; 
+    padding:.5em;
+    margin-top: 20px;
+    border-radius: 3px;
+    
+}
+
+.nba{
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+#btn{
+    cursor: pointer;
+    color: #ecf0f1;
+    background-color: #e74c3c;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1em;
+    margin-top: 20px;
+
+}
+
+.btn{
+    cursor: pointer;
+    color: #ecf0f1;
+    background-color: #9aa316;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1em;
+    margin-top: 20px;
+
+}
+
+
+.player:hover {
+    background-color: rgb(113, 151, 155);
+}
+
+.popup .content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:#fff;
+    width:400px;
+    height:600px;
+    z-index:2;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    font-family:"Open Sans",sans-serif;
+    color: black;
+    font-weight:400;
+    box-shadow: 1px 1px 3px #0a1612;
+    border-radius: 10px;
+
+}
+  
+
+.popup.active .content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+}
+  
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+  
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+  
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.delete-player{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.playerStats > div{
+      margin-top: 6px;
+}
+
+.playerName{
+    cursor: pointer;
+
+}
+
